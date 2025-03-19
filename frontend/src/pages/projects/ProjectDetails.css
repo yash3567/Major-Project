@@ -1,0 +1,19 @@
+.details {
+    color: #213547;
+}
+
+.btn_color {
+    background-color: #213547;
+    color: whitesmoke;
+}
+
+.btn_color:hover {
+    background: #213547;
+    color: #98d6e1;
+
+}
+
+.abstract {
+    line-height: 30px;
+    letter-spacing: 1px;
+}
