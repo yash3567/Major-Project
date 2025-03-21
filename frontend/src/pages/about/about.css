@@ -23,17 +23,131 @@
 
 .card-front {
     background-color: blueviolet;
-    color: white; /* Ensure the text color is set for the front side */
+    color: white;
+    /* Ensure the text color is set for the front side */
 }
 
 .card-back {
     background-color: yellow;
-    color: black; /* Ensure the text color is black on the back side */
+    color: black;
+    /* Ensure the text color is black on the back side */
     transform: rotateY(180deg);
 }
 
-.card-back strong, 
-.card-back p, 
+.card-back strong,
+.card-back p,
 .card-back a {
-    color: black; /* Explicitly set text color for elements on the back */
+    color: black;
+    /* Explicitly set text color for elements on the back */
+}
+
+
+
+
+/* Flip Card Container */
+.flip-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    margin: 20px;
+}
+
+/* Flip Card */
+.flip-card {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    perspective: 1000px;
+    transition: transform 0.6s;
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center content vertically */
+    align-items: center;
+    /* Center content horizontally */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+/* Front Side */
+.flip-card-front {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Circular Image */
+.circle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+/* Back Side */
+.flip-card-back {
+    background: #2196f3;
+    /* Blue background */
+    color: #fff;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Centered Text */
+.flip-card-back p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    /* Add spacing between text and link */
+}
+
+/* Centered Connect Link */
+.flip-card-back a {
+    color: #ffd700;
+    /* Yellow color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: inline-block;
+    /* Ensures link is centered */
+}
+
+.flip-card-back a:hover {
+    color: #ff4500;
+    /* Orange hover color */
+}
+
+/* Name Label Below the Circle */
+.name-label {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
 }
