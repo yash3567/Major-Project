@@ -1,38 +1,30 @@
+import React from "react";
+import "./about.css";
 
-import './about.css';
-import { FiExternalLink } from 'react-icons/fi';
-
-const FlipCard = (props) => {
-  // Check if connect is provided and not undefined
-  const formattedLink = props.connect
-    ? props.connect.startsWith('http')
-      ? props.connect
-      : `https://${props.connect}`
-    : null; // Handle cases where connect is undefined
-
+const FlipCard = ({ name, image, contribution, connect }) => {
   return (
-    <div className="card h-40 w-80 md:w-52">
-      <div className="card-inner">
-        <div className="card-front flex items-center justify-center text-2xl font-medium">
-          <p>{props.name}</p>
-        </div>
-        <div className="card-back text-black flex flex-col items-center justify-center">
-          <strong>{props.position}</strong>
-          <p>{props.contribution}</p>
-          {formattedLink ? (
-            <a
-              className='flex items-center gap-1'
-              href={formattedLink}
-              target='_blank'
-              rel="noreferrer"
-            >
-              Connect <FiExternalLink />
-            </a>
-          ) : (
-            <p>No link available</p> // Fallback message if connect is missing
-          )}
+    <div className="flip-card-container">
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          {/* Front Side */}
+          <div className="flip-card-front">
+            <img src={image} alt={name} className="circle-image" />
+          </div>
+
+          {/* Back Side */}
+          <div className="flip-card-back">
+            <p className="text-sm">{contribution}</p>
+            {connect && (
+              <a href={connect} target="_blank" rel="noopener noreferrer">
+                Connect
+              </a>
+            )}
+          </div>
         </div>
       </div>
+
+      {/* Name displayed outside below the circle */}
+      <p className="name-label">{name}</p>
     </div>
   );
 };

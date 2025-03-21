@@ -7,7 +7,7 @@ const About = () => {
     <Layout>
       <div className="bg-lightTheme-secondary text-lightTheme-text dark:bg-darkTheme-secondary dark:text-darkTheme-text">
         <section className="p-5 text-center">
-          <p className=" text-3xl md:text-4xl font-bold">
+          <p className=" text-3xl md:text-4xl font-bold mb-8" style={{ "fontWeight": "bolder", "color": "#112143" }}>
             About ProjectStation
           </p>
           <p className="pt-3 text-lg">
@@ -48,45 +48,50 @@ const About = () => {
         </section>
 
         <section className="p-5">
-          <p className="text-center text-3xl font-medium">Our Team</p>
+          <p className="text-center text-3xl font-medium" style={{ "fontWeight": "bolder", "color": "#112143" }}>Our Team</p>
           <div className="grid md:grid-cols-6 gap-3 pt-3 justify-center">
             <FlipCard
               name="Yash Nandeshwar"
-              position="Team Lead"
+              image="/photo3.jpg"
               contribution="Worked on Frontend & Backend"
               connect="https://www.linkedin.com/in/yash-nandeshwar-880b18267/"
             />
             <FlipCard
               name="Manthan Gedam"
-              contribution="Worked on Frontend & Backend"
+              image="/photo2.jpg"
+              contribution="Worked on Backend"
               connect="https://www.linkedin.com/in/manthan-gedam-a00939202/"
             />
             <FlipCard
               name="Kaushik Ganvir"
+              image="/photo4.jpg"
               contribution="Worked on Frontend"
               connect="https://www.linkedin.com/in/kaushik-ganvir-289549243/"
             />
             <FlipCard
               name="Vipin Jugnake"
-              contribution="Worked on Frontend & Backend"
+              image="/Profile-Male-PNG.png"
+              contribution="Worked on Documentation"
               connect="https://www.linkedin.com/in/vipinjugnake/"
             />
-
             <FlipCard
-              name="Anas Khan "
-              contribution="Worked on Documentation "
+              name="Anas Khan"
+              image="/photo1.jpg"
+              contribution="Worked on Frontend"
               connect="https://www.linkedin.com/in/anaskhan7860/"
             />
             <FlipCard
               name="Zaid Khan"
-              contribution="Worked on Documentation"
-              // connect='linkedin.com/in/vaibhav-ghildiyal'
+              image="/photo5.jpg"
+              contribution="Worked on Documentation & Frontend"
+              connect="https://www.linkedin.com/in/jahed-khan/"
             />
           </div>
         </section>
 
+
         <section className="pt-5 text-center">
-          <p className=" text-3xl font-medium">Join WorkStation</p>
+          <p className=" text-3xl font-medium">Join <span style={{ "fontWeight": "bolder", "color": "#112143" }}>WorkStation</span></p>
           <p className="text-lg font-medium pt-3">
             Join us in our efforts.{" "}
             <a className="font-bold" href="/contact">
