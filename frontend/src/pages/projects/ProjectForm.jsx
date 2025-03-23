@@ -2,6 +2,8 @@ import { useState } from "react";
 import Layout from "./../../components/layouts/Layout";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProjectForm = () => {
   const [name, setName] = useState("");
@@ -43,24 +45,29 @@ const ProjectForm = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       if (projectResult.data.success) {
-        alert("Project Pushed Successfully");
-        navigate("/project");
+        toast.success("🎉 Project Uploaded Successfully!", {
+          position: "top-right",
+          autoClose: 3000,
+        });
+        setTimeout(() => navigate("/project"), 3000); // Navigate after showing toast
       }
     } catch (error) {
+      toast.error("❌ Something went wrong! Try again.", {
+        position: "top-right",
+        autoClose: 3000,
+      });
       console.log(error);
     }
   };
 
   return (
     <Layout>
-      <div
-        className="min-h-screen  dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex flex-col lg:flex-row"
-      >
+      <ToastContainer /> {/* Toast container to show notifications */}
+      <div className="min-h-screen dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex flex-col lg:flex-row">
 
         <div className="hidden lg:flex items-center justify-center w-1/2 p-10 cursor-pointer">
           <img src="/svg/register.svg" alt="Register Illustration" className="w-100 h-100" />
         </div>
-
 
         <form
           className="w-full lg:w-2/3 max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg mt-8 mb-6 bg-opacity-90 "
@@ -68,7 +75,6 @@ const ProjectForm = () => {
         >
           <h2 className="text-3xl font-bold mb-6 text-center">Add Your Project</h2>
 
-          {/* Two Column Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
             <input type="text" className="border rounded-md p-2 w-full cursor-pointer" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
             <input type="email" className="border rounded-md p-2 w-full cursor-pointer" placeholder="Domain-Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
@@ -101,7 +107,6 @@ const ProjectForm = () => {
               </label>
             </div>
 
-            {/* Full width for file upload */}
             <div className="col-span-2">
               <label className="block text-sm font-medium ">Upload Project File</label>
               <input type="file" className="border rounded-md p-2 w-full " onChange={handleFileChange} />
@@ -115,17 +120,12 @@ const ProjectForm = () => {
             <input type="url" className="border rounded-md p-2 w-full col-span-2 cursor-pointer" placeholder="Deployed Project URL" value={link} onChange={(e) => setLink(e.target.value)} required />
           </div>
 
-          {/* Submit Button */}
           <button type="submit" className="w-full mt-6 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
             Add Project
           </button>
         </form>
       </div>
     </Layout>
-
-
-
-
   );
 };
 

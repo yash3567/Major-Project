@@ -34,7 +34,7 @@ const Home = () => {
             <div className="bg-lightTheme-secondary text-lightTheme-text dark:bg-darkTheme-secondary dark:text-darkTheme-text">
                 <section className="grid md:grid-cols-2 pt-5 px-2">
                     <div className="my-auto">
-                        <div className="text-xl text-center md:text-5xl font-[sura]" style={{ fontWeight: "bolder", color: "#112143" }}>
+                        <div className="text-xl text-center md:text-5xl font-[sura]" style={{ fontWeight: "bolder", color: "#112143", "fontSize": "30px" }}>
                             <p>{displayText}{showCursor && <span className="animate-pulse">|</span>}</p>
                         </div>
 
@@ -66,13 +66,13 @@ const Home = () => {
                 <section className="p-5">
 
                     <div className="flex mt-5 justify-center">
-                    <button
-    onClick={handleGetStarted} // Call the handleGetStarted function on click
-    className="flex gap-2 items-center font-medium text-base p-1 hover:rounded border-b-2 border-[#112143] transition-colors
+                        <button
+                            onClick={handleGetStarted} // Call the handleGetStarted function on click
+                            className="flex gap-2 items-center font-medium text-base p-1 hover:rounded border-b-2 border-[#112143] transition-colors
                hover:bg-[#112143] hover:text-white"
->
-    Get Started <FaArrowRightLong />
-</button>
+                        >
+                            Get Started <FaArrowRightLong />
+                        </button>
 
                     </div>
 
