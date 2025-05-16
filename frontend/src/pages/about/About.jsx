@@ -65,13 +65,13 @@ const About = () => {
             <FlipCard
               name="Kaushik Ganvir"
               image="/photo4.jpg"
-              contribution="Worked on Frontend"
+              contribution="Worked on Frontend & Documentation"
               connect="https://www.linkedin.com/in/kaushik-ganvir-289549243/"
             />
             <FlipCard
               name="Vipin Jugnake"
-              image="/Profile-Male-PNG.png"
-              contribution="Worked on Documentation"
+              image="/photo6.jpg"
+              contribution="Worked on Frontend & Documentation"
               connect="https://www.linkedin.com/in/vipinjugnake/"
             />
             <FlipCard
@@ -83,7 +83,7 @@ const About = () => {
             <FlipCard
               name="Zaid Khan"
               image="/photo5.jpg"
-              contribution="Worked on Documentation & Frontend"
+              contribution="Work on Documentation"
               connect="https://www.linkedin.com/in/jahed-khan/"
             />
           </div>
